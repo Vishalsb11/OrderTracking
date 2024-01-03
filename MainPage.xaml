@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShippingXam.MainPage"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="mainView1"
+             xmlns:Main="clr-namespace:ShippingXam.Models"
+             BackgroundImageSource="https://img.freepik.com/free-vector/blue-abstract-background_1393-339.jpg"
+             mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <Main:ToggleViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="0" Margin="0">
+                <Frame HeightRequest="200" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source="https://i.pinimg.com/564x/24/a9/2a/24a92ad540be8478d4eaf9e4509364c3.jpg" Aspect="AspectFill" Margin="0" />
+                    <!--https://i.pinimg.com/564x/24/a9/2a/24a92ad540be8478d4eaf9e4509364c3.jpg-->
+                </Frame>
+                <Frame BackgroundColor="Transparent" Padding="0,120,0,-50" CornerRadius="0" HeightRequest="120">
+                    <Label Text="Order Tracking" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Bold"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding= "40,0,40,0">
+                <Button Text="Get Started" Clicked="GetStarted"  BackgroundColor="White" TextColor="#064996" FontAttributes="Bold" CornerRadius="30"></Button>
+                <!--<Grid>
+                    <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350" ></BoxView>
+                    <Frame BackgroundColor="White" WidthRequest="40" Padding="0" Margin="0" HeightRequest="40" CornerRadius="25" HasShadow="False" BorderColor="LightGray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Label Text="OR" TextColor="#064996" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                    </Frame>
+                </Grid>
+                <Button Text="Sign Up" Command="{Binding SubmitCommand}" Clicked="SignUp" BackgroundColor="White" TextColor="#064996" FontAttributes="Bold" CornerRadius="30" Padding="0,0,0,0"></Button>-->
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
