@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:LoginCredentials="clr-namespace:ShippingXam.Models"
+             x:Class="ShippingXam.Views.LoginPage"
+             BackgroundImageSource="https://img.freepik.com/free-vector/blue-abstract-background_1393-339.jpg"
+             mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <LoginCredentials:LoginCredentialsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <Grid>
+                    <StackLayout Padding="0" Margin="0">
+                        <Frame HeightRequest="200" HorizontalOptions="FillAndExpand" Padding="0">
+                            <Image Source="https://i.pinimg.com/564x/24/a9/2a/24a92ad540be8478d4eaf9e4509364c3.jpg" Aspect="AspectFill" Margin="0" /> <!--https://i.pinimg.com/564x/24/a9/2a/24a92ad540be8478d4eaf9e4509364c3.jpg-->
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Margin="15,100,15,0">
+                        <Frame BackgroundColor="White" HeightRequest="450" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                            <StackLayout>
+                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                    <Label Text="SIGN IN" TextColor="#064996" FontSize="Medium" FontAttributes="Bold" ></Label>
+                                </StackLayout>
+                                <StackLayout Margin="0,20,0,0">
+                                    <Frame BackgroundColor="Transparent" BorderColor="#064996" Padding="0" Margin="0" CornerRadius="25" HorizontalOptions="FillAndExpand" >
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BackgroundColor="AliceBlue" CornerRadius="30" HeightRequest="30" WidthRequest="30" HorizontalOptions="Fill" VerticalOptions="Fill" Padding="0" Margin="10,10,10,10">
+                                                <Image Source="https://cdn-icons-png.flaticon.com/128/747/747545.png" Aspect="AspectFill"/>
+                                            </Frame>
+                                            <Entry x:Name="MyUsername" Text="{Binding loginProcess.Username}" Placeholder="Email or Username" TextColor="Black" HorizontalOptions="StartAndExpand" PlaceholderColor="LightGray" Margin="0,0,25,0"/>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame BackgroundColor="Transparent" BorderColor="#064996" Padding="0" Margin="0,20,0,0" CornerRadius="25" HorizontalOptions="FillAndExpand" >
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BackgroundColor="AliceBlue" CornerRadius="30" HeightRequest="30" WidthRequest="30" HorizontalOptions="Fill" VerticalOptions="Fill" Padding="0" Margin="10,10,10,10">
+                                                <Image Source="https://cdn-icons-png.flaticon.com/512/1000/1000915.png" Aspect="AspectFill" />
+                                            </Frame>
+                                            <Entry x:Name="MyPassword" Text="{Binding loginProcess.Password}" Placeholder="Password" IsPassword="True" TextColor="Black" HorizontalOptions="StartAndExpand" PlaceholderColor="LightGray" Margin="0,0,25,0"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="0,0,0,15">
+                                    <CheckBox IsChecked="False" Color="#064996" Margin="15,0,0,0"></CheckBox>
+                                    <Frame HeightRequest="5" WidthRequest="100" BackgroundColor="Transparent" Padding="0,0,0,7.5" CornerRadius="0">                                   
+                                        <StackLayout>
+                                            <Grid>
+                                                <StackLayout Padding="0,7.5,0,0">
+                                                    <Label Text="Remember Me" TextColor="#064996" BackgroundColor="White" FontSize="12.5" VerticalOptions="EndAndExpand"></Label>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame HeightRequest="5" WidthRequest="120" BackgroundColor="Transparent" Padding="0,0,0,7.5" CornerRadius="0">
+                                        <Grid>
+                                            <StackLayout>
+                                                <Label Text="Forgot Password ?" TextColor="#064996" FontAttributes="Bold" TextDecorations="Underline" BackgroundColor="White" FontSize="12.5" VerticalOptions="EndAndExpand"></Label>
+                                            </StackLayout>
+                                            <Button BackgroundColor="Transparent" Clicked="Navigate_ForgotPassword"></Button>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                                <Button Text="Sign In" Command="{Binding SubmitCommand}" Clicked="RedirectLogin" BackgroundColor="#064996" TextColor="White" FontAttributes="Bold" CornerRadius="30" Padding="0,0,0,0"></Button>
+                                <!--<StackLayout Orientation="Horizontal" Margin="0,0,0,0" HorizontalOptions="Center">
+                                    <Label Text="Yet to Connect ?" TextColor="Gray" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="60,0,0,0"></Label>
+                                    <Frame HeightRequest="5" WidthRequest="120" BackgroundColor="Transparent" Padding="0,0,0,0" CornerRadius="0" HorizontalOptions="Center">
+                                        <Grid>
+                                            <StackLayout>
+                                                <Label Text="Sign Up" TextColor="#064996" FontAttributes="Bold" TextDecorations="Underline" BackgroundColor="White" FontSize="12.5" VerticalOptions="EndAndExpand"></Label>
+                                            </StackLayout>
+                                            <Button BackgroundColor="Transparent" Clicked="Navigate_SignUp"></Button>
+                                        </Grid>
+                                    </Frame>
+                                    <Label Text="Sign Up" TextColor="#064996" HorizontalTextAlignment="Center" TextDecorations="Underline" VerticalTextAlignment="Center"></Label>
+                                </StackLayout>-->
+                                <StackLayout>
+                                    <Grid>
+                                        <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="200" ></BoxView>
+                                        <Frame BackgroundColor="White" WidthRequest="40" Padding="0" Margin="0" HeightRequest="40" CornerRadius="15" HasShadow="False" BorderColor="LightGray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                                            <Label Text="OR" TextColor="Gray" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                        </Frame>
+                                    </Grid>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10">
+                                        <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" Padding="0,0,0,0" HasShadow="True" CornerRadius="50">
+                                            <StackLayout>
+                                                <Grid>
+                                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png" />
+                                                    </StackLayout>
+                                                    <Button BackgroundColor="Transparent" Clicked="Navigate_ForgotPassword" HeightRequest="100"></Button>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" Padding="0,0,0,0" HasShadow="True" CornerRadius="50">
+                                            <StackLayout>
+                                                <Grid>
+                                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Image Source="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" />
+                                                    </StackLayout>
+                                                    <Button BackgroundColor="Transparent" Clicked="Navigate_ForgotPassword" HeightRequest="100"></Button>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" Padding="0,0,0,0" HasShadow="True" CornerRadius="50">
+                                            <StackLayout>
+                                                <Grid>
+                                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Image Source="https://img.freepik.com/free-icon/google_318-258888.jpg" />
+                                                    </StackLayout>
+                                                    <Button BackgroundColor="Transparent" Clicked="Navigate_ForgotPassword" HeightRequest="100"></Button>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Frame>    <!--Command="{Binding SubmitCommand}"-->
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+<!--https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg-->

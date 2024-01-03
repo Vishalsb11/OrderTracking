@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Test2="clr-namespace:ShippingXam.Models"
+             x:Class="ShippingXam.Views.Test2"
+             x:Name="mainView1" 
+             BackgroundImageSource="https://img.freepik.com/free-vector/blue-abstract-background_1393-339.jpg"
+             mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <Test2:ToggleViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--<ScrollView Orientation="Vertical">
+            <Frame BackgroundColor="Transparent" WidthRequest="120" HasShadow="True" Padding="0,30,0,0">
+                <StackLayout Padding="0,0,0,0">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,10" BackgroundColor="#064996">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,10" BackgroundColor="#064996">
+                            <Label Text="Track by Order"></Label>
+                            <Switch x:Name="Switch1" IsToggled="{Binding toggle_1.Status}"></Switch>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,10" BackgroundColor="#064996">
+                            <Label Text="Track by Invoice"></Label>
+                            <Switch x:Name="Switch2" IsToggled="{Binding toggle_2.Status}"></Switch>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,10" BackgroundColor="#064996">
+                            <Label Text="Track by Package"></Label>
+                            <Switch x:Name="Switch3" IsToggled="{Binding toggle_3.Status}"></Switch>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </ScrollView>-->
+        <StackLayout>
+            <StackLayout Padding="0" Margin="0">
+                <Frame HeightRequest="200" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source="https://i.pinimg.com/564x/24/a9/2a/24a92ad540be8478d4eaf9e4509364c3.jpg" Aspect="AspectFill" Margin="0" />
+                    <!--https://i.pinimg.com/564x/24/a9/2a/24a92ad540be8478d4eaf9e4509364c3.jpg-->
+                </Frame>
+                <Frame BackgroundColor="Transparent" Padding="0,30,0,-40" CornerRadius="0" HeightRequest="120">
+                    <Label Text="Order Tracking" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Bold"/>
+                </Frame>
+            </StackLayout>            
+            <StackLayout Padding= "30,0,30,0">
+                <Button Text="Get Started" Clicked="GetStarted"  BackgroundColor="White" TextColor="#064996" FontAttributes="Bold" CornerRadius="30"></Button>
+                <Grid>
+                    <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350" ></BoxView>
+                    <Frame BackgroundColor="White" WidthRequest="40" Padding="0" Margin="0" HeightRequest="40" CornerRadius="25" HasShadow="False" BorderColor="LightGray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Label Text="OR" TextColor="#064996" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                    </Frame>
+                </Grid>
+                <Button Text="Sign Up" Command="{Binding SubmitCommand}" Clicked="SignUp" BackgroundColor="White" TextColor="#064996" FontAttributes="Bold" CornerRadius="30" Padding="0,0,0,0"></Button>
+            </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

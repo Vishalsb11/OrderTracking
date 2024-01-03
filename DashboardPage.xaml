@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ColorManipulator="clr-namespace:ShippingXam.Models"
+             x:Class="ShippingXam.Views.DashboardPage"
+             x:Name="mainView"
+             mc:Ignorable="d">
+    <!--<Shell.BackButtonBehavior>
+        <BackButtonBehavior></BackButtonBehavior>
+    </Shell.BackButtonBehavior>-->
+    <ContentPage.BindingContext>
+        <ColorManipulator:DashboardViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <StackLayout>
+                    <Frame HeightRequest="700" HasShadow="True" Padding="0,5,0,0">
+                        <StackLayout Padding="5,0,5,0">
+                            <Frame BackgroundColor="#064996" CornerRadius="10" Padding="0,5,0,5" HasShadow="True">
+                                <Frame BackgroundColor="#064996" CornerRadius="10" Padding="5,10,5,10" Margin="5" BorderColor="White">
+                                    <StackLayout Padding="0,0,0,0">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,10" BackgroundColor="#064996">
+                                            <RadioButton Content="Track By Order" CheckedChanged="Navigate_Track" FontSize="Micro" IsChecked="True" TextColor="White"/>
+                                            <RadioButton Content="Track By Invoice" CheckedChanged="Navigate_Track" FontSize="Micro" TextColor="White"/>
+                                            <RadioButton Content="Track By Package" CheckedChanged="Navigate_Track" FontSize="Micro" TextColor="White"/>                                
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="#064996">
+                                            <SearchBar Placeholder="Search" TextChanged="SearchBar_Dashboard" FontSize="Micro" WidthRequest="200"/>
+                                            <Button Text="Track Now" Clicked="SearchBar_Dashboard" BackgroundColor="White" TextColor="#064996" FontSize="Micro" FontAttributes="Bold" HeightRequest="8" WidthRequest="95" HorizontalOptions="Center" CornerRadius="10" Padding="0,0,0,0"></Button>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Frame>
+                            <StackLayout Padding="0,5,0,0">
+                                <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="0,5,0,0" BorderColor="#064996" HeightRequest="100">
+                                    <StackLayout Orientation="Horizontal" Padding="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <StackLayout Padding="0,0,0,0" HorizontalOptions="Start" VerticalOptions="Center">
+                                            <Frame HeightRequest="10" WidthRequest="10" CornerRadius="40" BackgroundColor="{Binding ColorStatus.Color}" BorderColor="#064996" HasShadow="True"></Frame>                                           
+                                        </StackLayout>
+                                        <StackLayout Padding="0,0,0,0" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding ColorStatus.Message}" TextColor="#064996" FontAttributes="Bold" BackgroundColor="White" FontSize="Large" Padding="5,5,5,5"></Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,0">
+                                <BoxView BackgroundColor="Transparent" HeightRequest="1" Margin="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350" ></BoxView>
+                                <StackLayout Orientation="Horizontal" Padding="0,0,0,0" HorizontalOptions="CenterAndExpand">                                    
+                                    <Frame HeightRequest="100" WidthRequest="100" BackgroundColor="White" Padding="0,0,0,0" BorderColor="#064996" HasShadow="True" CornerRadius="100">
+                                        <StackLayout>                                        
+                                            <Grid>
+                                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Image Source="https://cdn-icons-png.flaticon.com/128/3639/3639103.png" />
+                                                </StackLayout>
+                                                <Button BackgroundColor="Transparent" Clicked="Navigate_TotalBox" HeightRequest="100"></Button>
+                                            </Grid>                                        
+                                        </StackLayout>                                   
+                                    </Frame>
+                                    <BoxView BackgroundColor="Transparent" HeightRequest="1" Margin="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="50" ></BoxView>
+                                    <Frame HeightRequest="100" WidthRequest="100" BackgroundColor="White" Padding="0,0,0,0" BorderColor="#064996" HasShadow="True" CornerRadius="100">
+                                        <StackLayout>
+                                            <Grid>
+                                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Image Source="https://cdn-icons-png.flaticon.com/128/1585/1585176.png" />
+                                                </StackLayout>
+                                                <Button BackgroundColor="Transparent" Clicked="Navigate_Shipped" HeightRequest="100"></Button>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="TOTAL BOX" TextColor="#064996" BackgroundColor="White" FontAttributes="Bold" FontSize="Micro" Padding="0,0,30,0"></Label>
+                                    <Label Text="SHIPPING" TextColor="#064996" BackgroundColor="White" FontAttributes="Bold" FontSize="Micro" Padding="80,0,0,0"></Label>
+                                </StackLayout>
+                                <BoxView BackgroundColor="Transparent" HeightRequest="1" Margin="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350" ></BoxView>
+                                <StackLayout Orientation="Horizontal" Padding="0,0,0,0" HorizontalOptions="CenterAndExpand">
+                                    <Frame HeightRequest="100" WidthRequest="100" BackgroundColor="White" Padding="0,0,0,0" BorderColor="#064996" HasShadow="True" CornerRadius="100">
+                                        <StackLayout>
+                                            <Grid>
+                                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Image Source="https://cdn-icons-png.flaticon.com/128/1350/1350151.png" />
+                                                </StackLayout>
+                                                <Button BackgroundColor="Transparent" Clicked="Navigate_Delivered" HeightRequest="100"></Button>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                    <BoxView BackgroundColor="Transparent" HeightRequest="1" Margin="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="50" ></BoxView>
+                                    <Frame HeightRequest="100" WidthRequest="100" BackgroundColor="White" Padding="0,0,0,0" BorderColor="#064996" HasShadow="True" CornerRadius="100">
+                                        <StackLayout>
+                                            <Grid>
+                                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Image Source="https://cdn-icons-png.flaticon.com/128/5469/5469919.png" />                                                    
+                                                </StackLayout>
+                                                <Button BackgroundColor="Transparent" Clicked="Navigate_MiscellanousItemDetails" HeightRequest="100"></Button>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="DELIVERY" TextColor="#064996" BackgroundColor="White" FontAttributes="Bold" FontSize="Micro" Padding="10,0,0,0"></Label>
+                                    <Label Text="BACK ORDER" TextColor="#064996" BackgroundColor="White" FontAttributes="Bold" FontSize="Micro" Padding="108,0,0,0"></Label>
+                                </StackLayout>
+                                <BoxView BackgroundColor="Transparent" HeightRequest="1" Margin="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350" ></BoxView>
+                                <StackLayout Orientation="Horizontal" Padding="0,0,0,0" HorizontalOptions="CenterAndExpand">
+                                    <Frame HeightRequest="100" WidthRequest="100" BackgroundColor="White" Padding="0,0,0,0" BorderColor="#064996" HasShadow="True" CornerRadius="100">
+                                        <StackLayout>
+                                            <Grid>
+                                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Image Source="https://cdn-icons-png.flaticon.com/128/2953/2953860.png" />
+                                                </StackLayout>
+                                                <Button BackgroundColor="Transparent" Clicked="Navigate_OrderDetails" HeightRequest="100"></Button>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>                                    
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="ORDER DETAILS" TextColor="#064996" BackgroundColor="White" FontAttributes="Bold" FontSize="Micro" Padding="0,0,0,0"></Label>                                    
+                                </StackLayout>
+                                <BoxView BackgroundColor="Transparent" HeightRequest="1" Margin="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350" ></BoxView>
+                            </StackLayout>                            
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
